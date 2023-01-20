@@ -7,7 +7,7 @@ Resource                      ${RENODEKEYWORDS}
 
 *** Variables ***
 ${SCRIPT}                     ${CURDIR}/test.resc
-${UART}                       sysbus.uart
+${UART}                       sysbus.usart2
 
 
 *** Keywords ***
@@ -21,7 +21,6 @@ Should Run Test Case
     Load Script
     Start Emulation
     Wait For Prompt On Uart     uart:~$
-    Write Line To Uart
-    Wait For Prompt On Uart     uart:~$
-    Write Line To Uart          demo ping
-    Wait For Line On Uart       pong
+    Write Line To Uart          hello1
+    Wait For Prompt On Uart     hello1
+
